@@ -1,0 +1,104 @@
+{
+    "app-id": "org.snap4arduino.App",
+    "base": "io.atom.electron.BaseApp",
+    "base-version": "master",
+    "runtime": "org.freedesktop.Platform",
+    "runtime-version": "1.4",
+    "sdk": "org.freedesktop.Sdk",
+    "command": "run-s4a",
+    "finish-args": [
+        "--device=all",
+        "--filesystem=host",
+        "--share=ipc",
+        "--share=network",
+        "--socket=pulseaudio",
+        "--socket=x11"
+    ],
+    "modules": [
+        {
+            "name": "nodejs",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://nodejs.org/dist/v6.9.2/node-v6.9.2.tar.xz",
+                    "path": "node-v6.9.2.tar.xz",
+                    "sha256": "f41b320b37ce23a34dbc597040e71535ea4f6baa2342bc526bb45f5f9aa9c9fb"
+                }
+            ]
+        },
+        {
+            "name": "wget",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "http://ftp.gnu.org/gnu/wget/wget-1.18.tar.xz",
+                    "path": "wget-1.18.tar.xz",
+                    "sha256": "b5b55b75726c04c06fe253daec9329a6f1a3c0c1878e3ea76ebfebc139ea9cc1"
+                }
+            ]
+        },
+        {
+            "name": "snap4arduino",
+            "no-autogen": true,
+            "build-options": {
+                "build-args": [
+                    "--share=network"
+                ],
+                "strip": false,
+                "no-debuginfo": true
+            },
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://github.com/bromagosa/Snap4Arduino.git",
+                    /* version 1.2.1 */
+                    "branch": "91a3e04cd1d569f4cd35fc7bb55817a2ddf8407e",
+                    "dest": "s4a"
+                },
+                {
+                    "type": "shell",
+                    "commands": [
+                        "cd s4a && ./prepare --nwjs --desktop"
+                    ]
+                },
+                {
+                    "type": "file",
+                    "path": "s4a/Makefile"
+                },
+                {
+                    "type": "file",
+                    "path": "s4a/install"
+                },
+                {
+                    "type": "file",
+                    "path": "common/configure"
+                },
+                {
+                    "type": "file",
+                    "path": "s4a/run-s4a"
+                }
+            ]
+        },
+        {
+            "name": "metadata",
+            "sources": [
+                {
+                    "type": "file",
+                    "path": "common/configure"
+                },
+                {
+                    "type": "file",
+                    "path": "metadata/Makefile"
+                },
+                {
+                    "type": "file",
+                    "path": "metadata/install"
+                },
+                {
+                    "type": "file",
+                    "path": "metadata/org.snap4arduino.App.appdata.xml"
+                }
+            ]
+        }
+    ]
+}

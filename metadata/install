@@ -1,0 +1,8 @@
+#!/usr/bin/bash
+
+set -e
+
+prefix=$(cat prefix)
+appdatadir="${prefix}/share/appdata"
+mkdir -p "${appdatadir}"
+cp -a org.snap4arduino.App.appdata.xml "${appdatadir}"
