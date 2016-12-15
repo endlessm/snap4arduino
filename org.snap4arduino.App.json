@@ -99,6 +99,10 @@
                 {
                     "type": "file",
                     "path": "metadata/org.snap4arduino.App.appdata.xml"
+                },
+                {
+                    "type": "file",
+                    "path": "metadata/org.snap4arduino.App.desktop"
                 }
             ]
         }

@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Icon=org.snap4arduino.App
+Exec=run-s4a
+Name=Snap4Arduino
+GenericName=Snap4Arduino
+Comment=Use Snap! to control Arduino boards. Arduino goes lambda!
+Terminal=false
+Categories=Development;IDE;Electronics

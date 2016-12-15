@@ -15,13 +15,6 @@ escapeds4adir=$(echo "${s4adir}" | sed -e 's/[\/&]/\\&/g')
 sed -ie "s/@S4ADIR@/${escapeds4adir}/" run-s4a
 cp -a run-s4a "${bindir}"
 
-appsdir="${prefix}/share/applications"
-mkdir -p "${appsdir}"
-desktop="${appsdir}/org.snap4arduino.App.desktop"
-cp -a "${filesdir}/Snap4Arduino.desktop" "${desktop}"
-sed -i -e 's/Icon=.*/Icon=org.snap4arduino.App/' "${desktop}"
-sed -i -e 's/Exec=.*/Exec=run-s4a/' "${desktop}"
-
 iconsdir="${prefix}/share/icons/hicolor/128x128/apps"
 mkdir -p "${iconsdir}"
 cp -a "${filesdir}/icons/128x128x32.png" "${iconsdir}/org.snap4arduino.App.png"
