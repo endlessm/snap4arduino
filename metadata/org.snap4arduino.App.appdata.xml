@@ -7,7 +7,15 @@
     <p>
       Snap4Arduino is a modification of the Snap! visual programming
       language that lets you seamlessly interact with almost all
-      versions of the Arduino board. Features:
+      versions of the Arduino board.
+    </p>
+    <p>
+      Snap! (formerly BYOB) is an extended reimplementation of Scratch
+      that allows you to Build Your Own Blocks™. It also features
+      first class heterogeneous lists, first class procedures, and
+      continuations. These added capabilities make it suitable for a
+      serious introduction to computer science for high school or
+      college students. Features:
     </p>
     <ul>
       <li>Blocks-based, dynamic, live, concurrent, parallel programming</li>
@@ -26,7 +34,7 @@
   <url type="homepage">http://snap4arduino.org</url>
   <screenshots>
     <screenshot type="default">
-      <image>http://i.imgur.com/g4iNlEn.png</image>
+      <image>http://i.imgur.com/uKmQNTZ.png</image>
     </screenshot>
   </screenshots>
   <project_license>AGPL-3.0</project_license>
