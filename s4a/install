@@ -8,6 +8,7 @@ prefix=$(cat prefix)
 s4adir="${prefix}/s4a"
 mkdir -p "${s4adir}"
 cp -a "${filesdir}"/* "${s4adir}"
+chmod -R go+rX "${s4adir}"
 
 bindir="${prefix}/bin"
 mkdir -p "${bindir}"
