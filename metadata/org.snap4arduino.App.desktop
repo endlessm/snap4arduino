@@ -7,4 +7,4 @@ Name=Snap4Arduino
 GenericName=Snap4Arduino
 Comment=Use Snap! to control Arduino boards. Arduino goes lambda!
 Terminal=false
-Categories=Development;IDE;Electronics
+Categories=Development;IDE;Electronics;
