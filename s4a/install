@@ -1,0 +1,20 @@
+#!/usr/bin/bash
+
+set -e
+
+filesdir='s4a/releases/desktop/gnu/64'
+
+prefix=$(cat prefix)
+s4adir="${prefix}/s4a"
+mkdir -p "${s4adir}"
+cp -a "${filesdir}"/* "${s4adir}"
+
+bindir="${prefix}/bin"
+mkdir -p "${bindir}"
+escapeds4adir=$(echo "${s4adir}" | sed -e 's/[\/&]/\\&/g')
+sed -ie "s/@S4ADIR@/${escapeds4adir}/" run-s4a
+cp -a run-s4a "${bindir}"
+
+iconsdir="${prefix}/share/icons/hicolor/128x128/apps"
+mkdir -p "${iconsdir}"
+cp -a "${filesdir}/icons/128x128x32.png" "${iconsdir}/org.snap4arduino.App.png"
