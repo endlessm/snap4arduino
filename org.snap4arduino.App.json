@@ -2,9 +2,9 @@
     "app-id": "org.snap4arduino.App",
     "base": "io.atom.electron.BaseApp",
     "base-version": "master",
-    "runtime": "org.freedesktop.Platform",
-    "runtime-version": "1.4",
-    "sdk": "org.freedesktop.Sdk",
+    "runtime": "org.gnome.Platform",
+    "runtime-version": "3.22",
+    "sdk": "org.gnome.Sdk",
     "command": "run-s4a",
     "finish-args": [
         "--device=all",
