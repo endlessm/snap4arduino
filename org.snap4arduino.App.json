@@ -18,6 +18,16 @@
     ],
     "modules": [
         {
+            "name": "libgconf-2-4-app",
+            "sources": [
+                {
+                    "type": "apt",
+                    "url": "http://obs-master.endlessm-sf.com:82/shared/eos/",
+                    "components": "apps"
+                }
+            ]
+        },
+        {
             "name": "nodejs",
             "sources": [
                 {
