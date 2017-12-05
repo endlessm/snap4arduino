@@ -18,16 +18,6 @@
     ],
     "modules": [
         {
-            "name": "libgconf-2-4-app",
-            "sources": [
-                {
-                    "type": "apt",
-                    "url": "http://obs-master.endlessm-sf.com:82/shared/eos/",
-                    "components": "apps"
-                }
-            ]
-        },
-        {
             "name": "nodejs",
             "sources": [
                 {
@@ -50,6 +40,41 @@
             ]
         },
         {
+            "name": "gyp",
+            "buildsystem": "simple",
+            "cleanup": [ "*" ],
+            "sources": [
+                {
+                    "type": "git",
+                    "url": "https://chromium.googlesource.com/external/gyp",
+                    "commit": "324dd166b7c0b39d513026fa52d6280ac6d56770"
+                }
+            ],
+            "build-commands": [
+                "python2 setup.py install --prefix=/app"
+            ]
+        },
+        {
+            "name": "nss",
+            "buildsystem": "simple",
+            "subdir": "nss",
+            "sources": [
+                {
+                    "type": "archive",
+                    "url": "https://ftp.mozilla.org/pub/security/nss/releases/NSS_3_32_RTM/src/nss-3.32.tar.gz",
+                    "sha256": "35c6f381cc96bb25e4f924469f6ba3e57b3a16e0c2fb7e295a284a00d57ed335"
+                },
+                {
+                    "type": "patch",
+                    "path": "gyp-no-parallel.patch"
+                }
+            ],
+            "build-commands": [
+                "./build.sh --system-sqlite --system-nspr --enable-libpkix -v -o",
+                "install -D ../dist/Release/lib/*.so /app/lib"
+            ]
+        },
+        {
             "name": "snap4arduino",
             "no-autogen": true,
             "build-options": {
@@ -63,7 +88,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/bromagosa/Snap4Arduino.git",
-                    "branch": "master",
+                    "branch": "1.2.4",
                     "dest": "s4a"
                 },
                 {
