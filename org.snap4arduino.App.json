@@ -53,7 +53,7 @@
                 {
                     "type": "git",
                     "url": "https://github.com/bromagosa/Snap4Arduino.git",
-                    "branch": "master",
+                    "branch": "1.2.4",
                     "dest": "s4a"
                 },
                 {
